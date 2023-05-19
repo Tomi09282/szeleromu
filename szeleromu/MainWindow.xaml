@@ -1,0 +1,35 @@
+﻿<Window x:Class="szeleromu.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:szeleromu"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Helyszín:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <TextBox x:Name="txtLocation" Width="150"/>
+                <Button x:Name="btnPowerUnits" Content="Egységek" Margin="10,0,0,0" Click="btnPowerUnits_Click"/>
+                <Button x:Name="btnTotalCount" Content="Összes szám" Margin="10,0,0,0" Click="btnTotalCount_Click"/>
+                <Button x:Name="btnCategorize" Content="Kategóriák" Margin="10,0,0,0" Click="btnCategorize_Click"/>
+            </StackPanel>
+            <ListBox x:Name="listBoxPowerUnits" Grid.Row="1" Grid.Column="0" Margin="10" Width="300"/>
+            <DataGrid x:Name="dataGridSzeleromuk" Grid.Row="1" Grid.Column="0" AutoGenerateColumns="True" Margin="10" Visibility="Visible"/>
+            <Label x:Name="lblTotalPowerUnits" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,10,0" Visibility="Visible"/>
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="10">
+                <Button x:Name="btnAveragePerformance" Content="Átlagos teljesítmény (2010)" Margin="0,0,0,5" Click="btnAveragePerformance_Click"/>
+                <Button x:Name="btnMaxPerformance" Content="Legnagyobb teljesítmény" Margin="0,0,0,5" Click="btnMaxPerformance_Click"/>
+                <Button x:Name="btnGenerateReport" Content="Jelentés generálása" Click="btnGenerateReport_Click"/>
+            </StackPanel>
+        </Grid>
+    </Window>
+
